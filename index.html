@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saisie d'un Nombre</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <select id="pays">
+        <label for="pays">Pays</label>
+       <option> Afghaniste</option>
+       <option> Alb</option>
+        <option> Algérie</option>
+        <option> Andorre</option>
+        <option> Angola</option>
+        <option> Fourmi</option>
+        <option> argentin</option>
+        <option> Arménie</option>
+        <option> Australie
+        <option>Itali</option>
+        <option>Benin</option>
+        <option>France</option>
+        <option>Etats-Unis</option>
+    </select>
+    <div class="container">
+        <h2>INSCRIPTION</h2>
+        <label for="nom"> NOM</label>
+        <input type="nom" ><br>
+        <label for="prenom"> Prenom</label>
+        <input type="prenom" ><br>
+        <label for="email"> e-mail</label>
+        <input type="email" required><br>
+        <form id="numberForm">
+            <label for="numberInput">Veuillez saisir votre code :</label><br>
+            <input type="number" id="numberInput" required>
+            <span class="error" id="errorMessage"></span><br><br>
+            <button type="submit">Entrer</button>
+        </form>
+       
+    </div>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            
+            const inputNumber = document.getElementById('numberInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (inputNumber !== '42') {
+                errorMessage.textContent = 'Vous devez saisir votre code.';
+            } else {
+                errorMessage.textContent = '';
+                // Redirige vers une autre page
+                window.location.href = 'CHAT.html'; // Page cible
+            }
+        });
+    </script>
+</body>
+</html>
